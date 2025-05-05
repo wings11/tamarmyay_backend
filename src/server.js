@@ -7,6 +7,8 @@ const foodRoutes = require('./routes/foodRoutes');
 const locationRoutes = require('./routes/locationRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const reportRoutes = require('./routes/reportRoutes');
+const locations= require('./routes/locations')
+const foods= require('./routes/foods')
 
 const app = express();
 
@@ -34,6 +36,9 @@ app.use('/api/foods', foodRoutes);
 app.use('/api/locations', locationRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/reports', reportRoutes);
+
+app.use('/api/foods', foods);
+app.use('/api/locations', locations);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
